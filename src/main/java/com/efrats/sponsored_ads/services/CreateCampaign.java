@@ -3,11 +3,24 @@ package com.efrats.sponsored_ads.services;
 import com.efrats.sponsored_ads.entities.Campaign;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+import java.util.PriorityQueue;
+
+
 @Service
 public class CreateCampaign {
-    public Campaign getCampaign(Campaign c){
+    @PersistenceContext
+   private EntityManager entityManager;
 
-        return c;
+    @Transactional
+    public void createCampaign(Campaign c){
+        entityManager.persist(c);
+
     }
+
 
 }

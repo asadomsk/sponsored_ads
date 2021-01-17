@@ -1,19 +1,22 @@
 package com.efrats.sponsored_ads.entities;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Getter
 @Setter
 @ToString
+@AllArgsConstructor
+@Entity
 public class Campaign {
+   @Id
+   private Long id;
    String name;
-   Date startDate;
+   Date start_date;
    String category;
    BigDecimal bid;
 }
