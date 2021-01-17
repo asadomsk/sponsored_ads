@@ -22,5 +22,11 @@ public class CreateCampaign {
 
     }
 
+    @Transactional
+    public Campaign getCampaign(Long id){
+       return entityManager.find(Campaign.class, id);
+
+    }
+
 
 }

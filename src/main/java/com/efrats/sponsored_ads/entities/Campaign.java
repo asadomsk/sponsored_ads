@@ -12,6 +12,9 @@ import java.util.Date;
 @ToString
 @AllArgsConstructor
 @Entity
+@NamedQuery(
+        name = "findAllCategories",
+        query = "SELECT c.name FROM Campaign c WHERE c.category = :category")
 public class Campaign {
    @Id
    private Long id;
