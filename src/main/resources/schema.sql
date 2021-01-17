@@ -7,3 +7,12 @@ CREATE TABLE CAMPAIGN (
   category VARCHAR(250) NOT NULL,
   bid DECIMAL NOT NULL
 );
+
+
+CREATE TABLE IF NOT EXISTS PRODUCT (
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  title varchar(255) NOT NULL,
+  category  varchar(255) NOT NULL,
+  price DECIMAL NOT NULL,
+  serial_Num INT NOT NULL
+);
