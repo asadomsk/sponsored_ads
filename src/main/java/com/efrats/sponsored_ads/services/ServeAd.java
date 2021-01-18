@@ -16,11 +16,14 @@ public class ServeAd {
     private EntityManager entityManager;
 
     @Transactional
-    public List<String> getProdByCategory(String category){
-        List name = entityManager.createNamedQuery("findAllCategories")
+    public Product getProdByCategory(String category){
+        List products = entityManager.createNamedQuery("findMostExpProductInActiveCategory")
                 .setParameter("category", category)
                 .getResultList();
-           return name;
+        if(products.size()>0 ) return (Product) products.get(0);
+        else  products = entityManager.createNamedQuery("findMostExpProduct")
+                .getResultList();
+            return (Product) products.get(0);
     }
 
 

@@ -29,17 +29,31 @@ public class AddsController {
 
         return createCampaign.getCampaign(campaign.getCampaign_id());
     }
-    @PostMapping (value = "/Create_product")
-    public void createProduct(@RequestBody Product product) {
 
-        createProduct.createProduct(product);
-    }
+
+//    @PostMapping (value = "/Create_product")
+//    public void createProduct(@RequestBody Product product) {
+//
+//        createProduct.createProduct(product);
+//    }
+//
+//    @GetMapping (value = "/add_prod_to_camp")
+//    public void addProdToComp(@RequestParam(required = true) Long comp_id, Long prod_id) {
+//
+//        createCampaign.AddProdToComp(comp_id, prod_id);
+//    }
+
+
 
     @GetMapping (value = "/Serve_ad")
-    public List<String> getProductByCategory(@RequestParam(required = true) String category) {
+    public Product getProductByCategory(@RequestParam(required = true) String category) {
 
           return serveAd.getProdByCategory(category);
 
     }
 
-}
+
+
+    }
+
+

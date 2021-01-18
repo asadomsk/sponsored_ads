@@ -13,8 +13,14 @@ public class CreateProduct {
     @PersistenceContext
     private EntityManager entityManager;
 
-    @Transactional
-    public void createProduct(Product p){
-        entityManager.persist(p);
-    }
+//    @Transactional
+//    public void createProduct(Product p){
+//        entityManager.persist(p);
+//    }
+//
+//    @Transactional
+//    public Product getProduct(Long id){
+//        return entityManager.find(Product.class, id);
+//
+//    }
 }
